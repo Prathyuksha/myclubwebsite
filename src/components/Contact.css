@@ -1,0 +1,124 @@
+/* ---------------------------------------------------- */
+/* Adas Club Contact Page: Futuristic Dark Theme */
+/* ---------------------------------------------------- */
+
+:root {
+    --color-dark-bg: #0d1117; 
+    --color-box-bg: #161b22; 
+    --color-text-light: #c9d1d9;
+    --color-text-dim: #8b949e;
+    
+    --color-accent-blue: #007cf0; 
+    --color-accent-pink: #f0007c; 
+    --color-success: #00f07c; 
+    --color-error: #ff4d4f; 
+
+    --color-border: #30363d;
+}
+
+.contact-page-container * {
+    box-sizing: border-box;
+}
+
+.contact-page-container {
+    padding: 80px 40px;
+    background-color: var(--color-dark-bg);
+    color: var(--color-text-light);
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.contact-header { margin-bottom: 50px; }
+.page-title { font-size: 3.5rem; font-weight: 900; margin-bottom: 10px; }
+.holographic-text { 
+    background: linear-gradient(90deg, var(--color-accent-pink) 0%, var(--color-accent-blue) 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 8px rgba(0, 124, 240, 0.3);
+}
+.page-subtitle { font-size: 1.1rem; color: var(--color-text-dim); }
+
+/* --- RESPONSIVE GRID LAYOUT --- */
+.contact-content-grid {
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 40px; 
+    max-width: 1000px; 
+    margin: 0 auto; 
+    text-align: left;
+}
+
+.contact-info-box, .contact-form-box {
+    background-color: var(--color-box-bg); 
+    padding: 35px; 
+    border-radius: 12px; 
+    border: 1px solid var(--color-border);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+.neon-border { transition: all 0.4s ease; }
+.neon-border:hover { border-color: var(--color-accent-blue); box-shadow: 0 0 25px rgba(0, 124, 240, 0.5); }
+
+.box-heading {
+    font-size: 1.8rem; font-weight: 700; color: white; margin-bottom: 30px;
+    border-bottom: 2px solid var(--color-accent-pink); display: inline-block; padding-bottom: 5px;
+}
+.info-item { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; color: var(--color-text-light); font-size: 1.1rem; }
+.info-icon { color: var(--color-accent-pink); font-size: 1.5rem; }
+.contact-link { color: var(--color-accent-blue); text-decoration: none; transition: color 0.3s ease; }
+.contact-link:hover { text-decoration: underline; color: white; }
+.follow-heading { font-size: 1.3rem; color: var(--color-text-dim); margin-top: 30px; margin-bottom: 15px; }
+.social-links { display: flex; gap: 20px; }
+.social-icon-link {
+    display: flex; align-items: center; gap: 8px; text-decoration: none; color: var(--color-text-light);
+    font-size: 1rem; transition: transform 0.3s ease;
+}
+.social-icon { font-size: 1.8rem; }
+.instagram-glow { color: #E1306C; }
+.instagram-glow:hover { transform: translateY(-3px) scale(1.05); color: white; text-shadow: 0 0 10px #E1306C; }
+
+.futuristic-form { display: flex; flex-direction: column; gap: 15px; }
+.form-input {
+    width: 100%; padding: 12px 15px; background-color: #242a35; border: 1px solid var(--color-border);
+    border-radius: 8px; color: var(--color-text-light); font-size: 1rem; transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    resize: vertical;
+}
+.form-input::placeholder { color: var(--color-text-dim); }
+.form-input:focus { outline: none; border-color: var(--color-accent-blue); box-shadow: 0 0 10px rgba(0, 124, 240, 0.5); }
+.submit-button {
+    padding: 12px 20px; margin-top: 10px; background-color: var(--color-accent-pink); color: white;
+    border: none; border-radius: 8px; font-weight: 700; font-size: 1.1rem; cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+.submit-button:hover {
+    background-color: #ff209c; transform: translateY(-2px); box-shadow: 0 4px 15px rgba(240, 0, 124, 0.4);
+}
+
+.submission-status {
+    margin-top: 20px; padding: 10px 15px; border-radius: 6px; font-weight: 600; text-align: center;
+    animation: fadeIn 0.5s ease;
+}
+.submission-status.success {
+    background-color: rgba(0, 240, 124, 0.15); color: var(--color-success);
+    border: 1px solid var(--color-success); text-shadow: 0 0 5px rgba(0, 240, 124, 0.5);
+}
+.submission-status.error {
+    background-color: rgba(255, 77, 79, 0.15); color: var(--color-error);
+    border: 1px solid var(--color-error); text-shadow: 0 0 5px rgba(255, 77, 79, 0.5);
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+
+/* ---------------------------------------------------- */
+/* Media Queries for Responsiveness */
+/* ---------------------------------------------------- */
+@media (max-width: 900px) {
+    .contact-content-grid { 
+        grid-template-columns: 1fr; 
+    }
+    .contact-info-box, .contact-form-box { padding: 30px; }
+}
+@media (max-width: 500px) {
+    .page-title { font-size: 2.5rem; }
+    .contact-page-container { padding: 50px 20px; }
+}
