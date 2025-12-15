@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 
@@ -12,7 +12,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <Link to="/">Ada's Club</Link>
+        <Link to="/">{"Ada's Club"}</Link>
       </div>
       <div className={`navbar-links ${isOpen ? "open" : ""}`}>
         <Link to="/">Home</Link>
