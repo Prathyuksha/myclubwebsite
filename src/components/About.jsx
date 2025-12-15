@@ -18,7 +18,7 @@ function About() {
 
   return (
     <div className="about-container">
-      
+
       {/* 🚀 Hero Section - Mission Statement */}
       <section className="about-hero-section">
         <div className="mission-content">

@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 
 
 // Use relative paths instead of absolute paths
-import Navbar from './components/Navbar.js';
-import Footer from './components/Footer.js';
+import Navbar from './components/Navbar.jsx';
+import Footer from './components/Footer.jsx';
 
-import Home from './components/Home.js';
-import About from './components/About.js';
-import Members from './components/Members.js';
-import Events from './components/Events.js';
-import Contact from './components/Contact.js';
+import Home from './components/Home.jsx';
+import About from './components/About.jsx';
+import Members from './components/Members.jsx';
+import Events from './components/Events.jsx';
+import Contact from './components/Contact.jsx';
 
 
 function App() {

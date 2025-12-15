@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 // Import all necessary icons
-import { FaCalendarAlt, FaCode, FaRobot, FaLaptopCode, FaChevronRight } from 'react-icons/fa'; 
+import { FaCalendarAlt, FaCode, FaRobot, FaLaptopCode, FaChevronRight } from 'react-icons/fa';
 import './events.css';
 
 // Map event types to a specific icon and primary accent color for a vibrant look
@@ -24,11 +24,11 @@ function Events() {
         { year: "2024", title: "Bid the Bug", desc: "A white-hat hacking and cybersecurity challenge focused on identifying and mitigating vulnerabilities.", category: "Competition", details: "Participants competed to find and report security flaws in a simulated environment." },
         { year: "2024", title: "LinkedIn Workshop", desc: "Professional development session on optimizing profiles and leveraging the platform for career growth.", category: "Workshop", details: "Practical tips on networking, building a personal brand, and profile optimization for job searches." },
         { year: "2024", title: "The Interview Vault", desc: "Comprehensive mock interview series to prepare members for technical and HR rounds.", category: "Workshop", details: "Structured sessions simulating real-world interviews with personalized feedback." },
-        
+
         // 2023
         { year: "2023", title: "AI Tools Series", desc: "Exploration and hands-on application of the latest Generative AI and ML development tools.", category: "Workshop", details: "Focused on tools like ChatGPT, Midjourney, and specific ML frameworks." },
         { year: "2023", title: "DSA Series", desc: "Intensive training sessions focused on core Data Structures and Algorithms for coding interviews.", category: "Coding", details: "Weekly deep dives into trees, graphs, dynamic programming, and competitive programming practices." },
-        
+
         // 2022
         { year: "2022", title: "Fullstack Development", desc: "Workshop covering modern stacks, including React/Node.js, for end-to-end application building.", category: "Workshop", details: "Built a fully functional web application from the database to the user interface." },
         { year: "2022", title: "Connections", desc: "A technical and fun quiz competition testing general knowledge of tech history and current events.", category: "Quiz", details: "A fast-paced quiz with rounds on innovation, tech leaders, and viral tech news." },
@@ -56,16 +56,16 @@ function Events() {
 
     const renderEventCard = (e, i) => {
         // CORRECTION: Map style based on the 'category' key, not the 'title'
-        const style = eventStyles[e.category] || eventStyles['Webinar']; 
+        const style = eventStyles[e.category] || eventStyles['Webinar'];
         const IconComponent = style.icon;
         const isFlipped = flippedCard === i;
-        
+
         // Use details if present, otherwise use the main description
-        const detailContent = e.details || e.desc; 
+        const detailContent = e.details || e.desc;
 
         return (
-            <div 
-                key={i} 
+            <div
+                key={i}
                 // Alternate positions for left/right timeline view
                 className={`timeline-node ${i % 2 === 0 ? 'left' : 'right'}`}
                 // Set the accent color dynamically via CSS variable
@@ -76,10 +76,10 @@ function Events() {
                     {/* Icon uses the dynamic color */}
                     <IconComponent className="dot-icon" style={{ color: style.color }} />
                 </div>
-                
+
                 {/* 3D Flip Container */}
                 <div className={`event-card-3d ${isFlipped ? 'is-flipped' : ''}`}>
-                    
+
                     {/* Front Face: Summary */}
                     <div className="card-face card-front">
                         <span className="event-category" style={{ color: style.color }}>
@@ -92,7 +92,7 @@ function Events() {
                             <p>Click for Details <FaChevronRight /></p>
                         </div>
                     </div>
-                    
+
                     {/* Back Face: Details */}
                     <div className="card-face card-back">
                         <h3 className="event-details-title">DETAILS</h3>
@@ -106,18 +106,18 @@ function Events() {
 
     return (
         <div className="events-page-container">
-            
+
             <header className="events-header">
                 <h1 className="page-title">
                     <span className="holographic-text">Adas Club Event Horizon</span>
                 </h1>
                 <p className="page-subtitle">A journey through our past, present, and future tech milestones.</p>
             </header>
-            
+
             <div className="events-timeline">
                 {events.map(renderEventCard)}
             </div>
-            
+
         </div>
     );
 }

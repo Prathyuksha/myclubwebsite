@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaUserCircle, FaChevronDown, FaChevronUp } from 'react-icons/fa'; 
+import { FaUserCircle, FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import './members.css';
 import president from '../assets/President.jpg';
 import photo1 from '../assets/Senior_member1.jpg';
@@ -14,16 +14,14 @@ import photo7 from '../assets/Senior_member3.jpg';
 import photo8 from '../assets/Club_member1.jpg';
 import photo9 from '../assets/Club_member2.jpg';
 
-// Add a fallback image import if you have one, or use FaUserCircle 
-// const defaultUserPhoto = '/path/to/default/user.jpg'; 
+// DATA is correct
 
-// ------------------ DATA (Kept same for functionality) ------------------
 const pastPresident = {
   name: "Jaya Harini T",
   year: "2024",
-  photo: president, 
+  photo: president,
   members: [
-    {name: "Dharanidharan", role: "Super Senior", photo: photo1 },
+    { name: "Dharanidharan", role: "Super Senior", photo: photo1 },
     { name: "Vidula", role: "Super Senior", photo: photo2 },
     { name: "Kavin", role: "Senior Member", photo: photo3 },
     { name: "Eswara Prathyuksha", role: "Senior Member", photo: photo4 },
@@ -43,15 +41,13 @@ const newPresident = {
   ]
 };
 
-// ------------------ COMPONENT ------------------
-
 export default function Members() {
   const [openBox, setOpenBox] = useState(null);
 
   const toggleBox = (boxName) => {
     setOpenBox(openBox === boxName ? null : boxName);
   };
-  
+
   // Function to handle image error by swapping the source to a fallback icon
   const handleImageError = (e) => {
     e.target.onerror = null; // prevents infinite loop
@@ -62,29 +58,29 @@ export default function Members() {
   const renderPresidentCard = (presidentData, boxKey) => {
     const isOpen = openBox === boxKey;
     const Icon = isOpen ? FaChevronUp : FaChevronDown;
-    
+
     return (
       <div className={`president-card-box ${isOpen ? 'is-open' : ''}`} onClick={() => toggleBox(boxKey)}>
-        
+
         {/* Clickable Header Area */}
         <div className="president-header">
-            <div className="photo-wrapper">
-                <img
-                  src={presidentData.photo}
-                  className="president-photo"
-                  alt={presidentData.name}
-                  onError={handleImageError} // Add error handler
-                />
-            </div>
+          <div className="photo-wrapper">
+            <img
+              src={presidentData.photo}
+              className="president-photo"
+              alt={presidentData.name}
+              onError={handleImageError} // Add error handler
+            />
+          </div>
 
-            <div className="president-info">
-                <h3 className="president-name">{presidentData.name}</h3>
-                <p className="president-year">({presidentData.year})</p>
-                <div className="expand-indicator">
-                    <Icon className="toggle-icon" />
-                    <span className="toggle-text">{isOpen ? 'Hide Team' : 'View Team'}</span>
-                </div>
+          <div className="president-info">
+            <h3 className="president-name">{presidentData.name}</h3>
+            <p className="president-year">({presidentData.year})</p>
+            <div className="expand-indicator">
+              <Icon className="toggle-icon" />
+              <span className="toggle-text">{isOpen ? 'Hide Team' : 'View Team'}</span>
             </div>
+          </div>
         </div>
 
         {/* Expandable Member List */}
@@ -93,11 +89,11 @@ export default function Members() {
             {presidentData.members.map((m, i) => (
               <div key={i} className="member-item">
                 <div className="member-photo-circle">
-                    <img 
-                        src={m.photo} 
-                        alt={m.name} 
-                        onError={handleImageError} // Add error handler
-                    />
+                  <img
+                    src={m.photo}
+                    alt={m.name}
+                    onError={handleImageError} // Add error handler
+                  />
                 </div>
                 <p className="member-name-small"><strong>{m.name}</strong></p>
                 <p className="member-role-small">{m.role}</p>
