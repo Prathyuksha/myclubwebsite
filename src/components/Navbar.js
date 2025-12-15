@@ -12,7 +12,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <Link to="/">Ada&apos;s</Link>
+        <Link to="/">{"Ada's Club"}</Link>
       </div>
       <div className={`navbar-links ${isOpen ? "open" : ""}`}>
         <Link to="/">Home</Link>
