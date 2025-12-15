@@ -10,12 +10,6 @@ function About() {
     { icon: <FaCodeBranch />, title: "Skill Development", description: "Providing resources for continuous learning and practical application." },
   ];
 
-  const teamMembers = [
-    { name: "S. Ava", role: "President / Lead Developer", bio: "Passionate about AI & scalable systems." /* image: teamMember1 */ },
-    { name: "J. Ben", role: "Vice President / Events Lead", bio: "Drives community engagement and hackathon organization." /* image: teamMember2 */ },
-    { name: "L. Chloe", role: "Design & Outreach", bio: "Focuses on user experience and visual branding." /* image: teamMember3 */ },
-  ];
-
   return (
     <div className="about-container">
 
@@ -47,18 +41,6 @@ function About() {
           ))}
         </div>
       </section>
-
-      {/* 🤝 Final CTA (Consistent with Home Page) */}
-      <section className="final-cta-section">
-        <div className="cta-content">
-          <h2>Ready to **Connect**?</h2>
-          <p>Join our platform and start contributing to cutting-edge projects.</p>
-          <a href="/join" className="cta-button final-cta">
-            Join the Adas Network
-          </a>
-        </div>
-      </section>
-
     </div>
   );
 }
