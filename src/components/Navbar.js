@@ -12,7 +12,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <Link to="/">Ada's Club</Link>
+        <Link to="/">Ada&apos;s</Link>
       </div>
       <div className={`navbar-links ${isOpen ? "open" : ""}`}>
         <Link to="/">Home</Link>
